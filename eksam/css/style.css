@@ -1,0 +1,1043 @@
+body {
+	padding: 0;
+	margin: 0;
+    background-color: #333;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;;
+}
+
+/*Kampagne på mainpage*/
+
+.campaign {
+	position: relative;
+	margin-top: 100px;
+}
+.campaign img {
+	display: block;
+	width: 100%;
+}
+
+.campaign-content{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    color: #fff;
+    position: absolute;
+    line-height: 1.5;
+    top: 13%;
+    left: 35%; /* Adjust this value to move the text to the left */
+    transform: translate(-50%, -50%);
+}
+
+
+
+.campaign-content p{
+    font-size: 20px;
+
+    
+}
+
+.read-more-button {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+   
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .campaign-content {
+        font-size: 18px !important; /* Add !important to increase specificity */
+        left: 60%; /* Adjust the left position as needed */
+        transform: translateX(-50%);
+        width: 80%;
+    }
+
+    .campaign-content p {
+        font-size: 14px !important; /* Add !important to increase specificity */
+    }
+
+    .read-more-button {
+        transform: translateX(-50%);
+    }
+}
+
+/*Kampagne på mainpage slut*/
+
+/*Andre artikler*/
+.aeldre-nyheder {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 80px;
+    color: #fff;
+}
+
+.content-articles {
+    margin-top: 100px;
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.article {
+    display: flex;
+    flex-direction: row;
+}
+
+.image-articles {
+    margin-right: 20px; 
+}
+
+.image-articles img {
+    max-width: 450px; 
+    border-radius: 5px;
+    height: auto;
+}
+
+.text-articles {
+    flex: 1;
+    line-height: 2;
+}
+
+.text-articles h2{
+}
+
+.text-articles h2,
+.text-articles p {
+    margin: 0;
+}
+
+.text-articles a {
+    text-decoration: none;
+    color: #fff; /* Adjust the color as needed */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .article {
+        flex-direction: column;
+    }
+
+    .image-articles {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .content-articles {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .article {
+        margin-bottom: 20px;
+    }
+
+    .image-articles {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/*Andre artikler slut*/
+
+
+/*Navigationsmenu start*/
+nav {
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	right: 0;
+	top: 0;
+	font-family: 'Montserrat', sans-serif;
+	padding: 0 5%;
+	height: 100px;
+	background-color:#1d1d1d;
+    opacity: 80%;
+}
+nav .logo {
+	float: left;
+	width: 50%;
+	height: 100%;
+	display: flex;
+    font-family: "bradley-djr", sans-serif;
+	align-items: center;
+    text-decoration: none;
+	font-size: 60px;
+	color: #fff;
+}
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+nav .links li {
+	list-style: none;
+}
+nav .links a {
+	display: block;
+	padding: 1em;
+	font-size: 20px;
+	font-weight: normal;
+	color: #fff;
+	text-decoration: none;
+}
+
+nav .links a:hover {
+    color: #94b660;
+}
+
+
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+
+
+
+/*Navigationsmenu slut*/
+@media screen and (max-width: 768px) {
+	nav .logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+	
+}
+
+
+/*Shop*/
+
+.shop-text{
+text-align: center;
+
+}
+
+.shop-title{
+    font-family: "bradley-djr", sans-serif;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.shop-title h2 {
+    font-family: "bradley-djr", sans-serif;
+    font-size: 100px;
+font-weight: 400;
+font-style: normal;
+}
+
+.shop-title h2,
+.shop-paragraph p {
+    margin-bottom: 20px;
+}
+
+.shop-paragraph {
+    font-family: "montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center; /* Center the text */
+    margin-top: 20px; /* Adjust the top margin as needed */
+    
+}
+
+.shop-paragraph a {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 10px 20px; /* Add padding for a button-like appearance */
+    background-color: #45552d; /* Background color for better visibility */
+    transition: color 0.3s, background-color 0.3s; /* Add smooth transition effect */
+
+}
+
+.shop-paragraph a:hover {
+    color: #fff; /* Change text color on hover */
+    background-color: #737f4d; /* Change background color on hover */
+}
+
+.container-shop	{
+	position: relative;
+	margin: 0 auto;
+	font-size: 0;
+    text-align: center;
+}
+.container-shop .card {
+	position: relative;
+	display: inline-block;
+	margin: 60px 40px 40px;
+
+    
+}
+.container-shop .photo {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 250px;
+	height: 300px;
+	overflow: hidden;
+	background-color: #000;
+    border-radius: 5px;
+    
+}
+
+.container-shop .photos {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 300px;
+	height: 370px;
+	overflow: hidden;
+	background-color: #000;
+    border-radius: 5px;
+    
+}
+
+.container-shop .photo img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	filter: grayscale(0) brightness(1);
+	transform: translate(-50%, -50%) scale(1.3);
+	transition: filter 1s ease-in-out, transform 3s ease-in-out;
+}
+
+.container-shop .photos img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	filter: grayscale(0) brightness(1);
+	transform: translate(-50%, -50%) scale(1.3);
+	transition: filter 1s ease-in-out, transform 3s ease-in-out;
+}
+
+.container-shop .card:hover .photo img	{
+	filter: grayscale(1) brightness(0.5);
+	transform: translate(-50%, -50%) scale(1);
+}
+.container-shop .text {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	font-family: "bradley djr", sans-serif;
+	transform: translate(-50%, -50%);
+}
+.container-shop .text .main,
+.container-shop .text .sub {
+	display: block;
+	color: #fff;
+	text-shadow: 0 0 3px #000;
+	overflow: hidden;
+}
+.container-shop .text .main {
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
+	text-transform: uppercase;
+	transform: translateY(-2px);
+	white-space: nowrap;
+    
+}
+.container-shop .text .sub {
+	margin-top: 2px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	transform: translateY(2px);
+    
+}
+.container-shop .text span {
+	display: block;
+}
+.container-shop .text .main span {
+	transform: translateY(100%);
+	transition: transform .5s .3s ease-in-out;
+}
+.container-shop .card:hover .text .main span {
+	transform: translateY(0%);
+	transition: transform .5s 0s ease-in-out;
+}
+.container-shop .text .sub span {
+	transform: translateY(-100%);
+	transition: transform .5s 0s ease-in-out;
+}
+.container-shop .card:hover .text .sub span {
+	transform: translateY(0%);
+	transition: transform .5s .3s ease-in-out;
+}
+
+/*Læs videre*/
+.container-shop .text .sub a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 30px;
+    transform: translateY(-100%);
+    transition: transform 0.5s 0s ease-in-out;
+}
+
+.container-shop .card:hover .text .sub a {
+    transform: translateY(0%);
+    transition: transform 0.5s 0s ease-in-out;
+}
+
+/* Merch */
+
+.container-shop-merch	{
+	position: relative;
+	margin: 0 auto;
+	font-size: 0;
+    text-align: center;
+    margin-bottom: 80px;
+}
+.container-shop-merch .card {
+	position: relative;
+	display: inline-block;
+	margin: 20px 40px 40px;
+
+    
+}
+.container-shop-merch .photo {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 250px;
+	height: 300px;
+	overflow: hidden;
+	background-color: #000;
+    border-radius: 5px;
+    
+}
+
+.container-shop-merch .photos {
+	position: relative;
+	z-index: 1;
+	display: block;
+	width: 300px;
+	height: 350px;
+	overflow: hidden;
+	background-color: #000;
+    border-radius: 5px;
+    
+}
+
+.container-shop-merch .photo img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	filter: grayscale(0) brightness(1);
+	transform: translate(-50%, -50%) scale(1.3);
+	transition: filter 1s ease-in-out, transform 3s ease-in-out;
+}
+
+.container-shop-merch .photos img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 77%;
+	filter: grayscale(0) brightness(1);
+	transform: translate(-50%, -50%) scale(1.3);
+	transition: filter 1s ease-in-out, transform 3s ease-in-out;
+}
+
+.container-shop-merch .card:hover .photo img	{
+	filter: grayscale(1) brightness(0.5);
+	transform: translate(-50%, -50%) scale(1);
+}
+.container-shop-merch .text {
+	position: absolute;
+	z-index: 3;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	font-family: "bradley djr", sans-serif;
+	transform: translate(-50%, -50%);
+}
+.container-shop-merch .text .main,
+.container-shop-merch .text .sub {
+	display: block;
+	color: #fff;
+	text-shadow: 0 0 3px #000;
+	overflow: hidden;
+}
+.container-shop-merch .text .main {
+	height: 30px;
+	font-size: 20px;
+	line-height: 30px;
+	text-transform: uppercase;
+	transform: translateY(-2px);
+	white-space: nowrap;
+    
+}
+.container-shop-merch .text .sub {
+	margin-top: 2px;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	transform: translateY(2px);
+    
+}
+.container-shop-merch .text span {
+	display: block;
+}
+.container-shop-merch .text .main span {
+	transform: translateY(100%);
+	transition: transform .5s .3s ease-in-out;
+}
+.container-shop-merch .card:hover .text .main span {
+	transform: translateY(0%);
+	transition: transform .5s 0s ease-in-out;
+}
+.container-shop-merch .text .sub span {
+	transform: translateY(-100%);
+	transition: transform .5s 0s ease-in-out;
+}
+.container-shop-merch .card:hover .text .sub span {
+	transform: translateY(0%);
+	transition: transform .5s .3s ease-in-out;
+}
+
+/*Læs videre*/
+.container-shop-merch .text .sub a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 30px;
+    transform: translateY(-100%);
+    transition: transform 0.5s 0s ease-in-out;
+}
+
+.container-shop-merch .card:hover .text .sub a {
+    transform: translateY(0%);
+    transition: transform 0.5s 0s ease-in-out;
+}
+
+/*Merch Slut*/
+
+
+
+/*Læs videre*/
+
+.laeg-kurv {
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;   
+}
+
+
+
+/*Shop Slut*/
+
+
+/*Øl info*/
+
+.beer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    margin: 150px 30px 40px 30px;
+}
+
+.beer-details {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.beer-details h1 {
+    color: #fff;
+    font-family: "bradley-djr", sans-serif;
+    font-size: 60px;
+font-weight: 400;
+font-style: normal;
+}
+
+.beer-details p {
+    color: #fff;
+    line-height: 1.5;
+}
+
+.beer-image img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 20px 0 20px;
+}
+
+.taste-profile {
+    flex: 1;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.taste-profile h2 {
+    color: #fff;
+}
+
+.taste-profile p {
+    color: #fff;
+}
+
+.nutritional-content {
+    width: 100%;
+    margin-top: 60px;
+    color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.beer-details h2 {
+    color: #fff;
+}
+
+.beer-details h2, p {
+    margin-bottom: 10px;
+}
+
+/*Øl info slut*/
+
+/* Sign Up Start */
+
+.membership-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+  }
+  
+  .membership-description {
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .membership-description h2 {
+    font-size: 50px;
+    margin-top: 80px;
+    color: #fff;
+    font-family: "bradley-djr", sans-serif;
+    font-size: 100px;
+font-weight: 400;
+font-style: normal;
+  }
+
+  .membership-description p, h3 {
+    margin-top: 20px;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+
+
+.signupFrm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 100px;
+}
+
+.form {
+    background-color: white;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+  }
+  
+  .title-signup {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .inputContainer {
+    position: relative;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+  }
+
+/* Style the inputs */
+
+.input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+  }
+  
+  /* Hide the placeholder texts (a) */
+  
+  ::placeholder {
+    color: transparent;
+  }
+
+  .label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 0 4px;
+    background-color: white;
+    color: #DADCE0;
+    font-size: 16px;
+    transition: 0.5s;
+    z-index: 0;
+  }
+
+  .submitBtn {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    border: none;
+    background-color: #45552d;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  
+  .submitBtn:hover {
+    background-color: #94b660;
+    transform: translateY(-2px);
+  }
+
+  .input:focus {
+    border: 2px solid #94b660;
+  }
+
+
+  .input:focus + .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: #45552d;
+  }
+
+  .input:not(:placeholder-shown)+ .label {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  
+@media (max-width: 768px) {
+    .membership-container {
+      flex-direction: column-reverse;
+    }
+  
+    .membership-description,
+    .signupFrm {
+      width: 100%;
+    }
+  }
+
+/* Sign up Slut */
+
+/*Om os*/
+.about-section{
+    margin-top: 100px;
+}
+
+.column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card-about {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+  }
+  
+  .about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    margin-bottom: 100px;
+    line-height: 1.5;
+  }
+
+  .about-section h1 {
+    margin-top: 30px;
+    font-family: "bradley-djr", sans-serif;
+    font-size: 100px;
+font-weight: 400;
+font-style: normal;
+margin-bottom: 60px;
+  }
+
+  .about-section h2 {
+    padding-top: 40px;
+    
+  }
+
+  .about-section p {
+    margin: 10px;
+  }
+  
+  .container-about {
+    padding: 0 16px;
+  }
+  
+  .container-about h2, p {
+color: #fff;
+  }
+
+  .container-about::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: #fff;
+  }
+  
+  .button-about {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #45552d;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #94b660;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+
+/*Om os slut*/
+
+
+/*Footer Start*/
+
+.footer-container {
+    background-color: #1d1d1d;
+    padding: 2rem 0 4rem 0;
+}
+
+.footer {
+    width: 80%;
+    height: 30vh;
+    background-color: #1d1d1d;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    
+}
+
+.footer-heading {
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+}
+
+.footer-heading h2 {
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.footer-heading a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer-heading a:hover {
+    color: #94b660;
+    transition: 0.3s ease-out;
+}
+
+.footer-email-form h2 {
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+#footer-email {
+    width: 250px;
+    height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#footer-email::placeholder {
+    color: #1b1b1b;
+}
+
+#footer-email-btn {
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #45552d;
+    outline: none;
+    border: none;
+    color: fff;
+    font-size: 1rem;
+    color: #fff;
+}
+
+#footer-email-btn:hover {
+    cursor: pointer;
+    background-color: #94b660;
+    transition: all 0.4s ease-out;
+
+}
+
+@media screen and (max-width: 1150px) {
+    .footer {
+        height: 50vh;
+    }
+    .footer-email-form{
+        margin-top: 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 820px) {
+    .footer {
+        padding-top: 2rem;
+    }
+    
+    
+}
+
+@media screen and (max-width: 720px) {
+    .footer-3 {
+        display: none;
+    }
+    .footer-email-form{
+        margin-top: 4rem;
+    }
+    
+}
+
+/*Footer Slut*/
